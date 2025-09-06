@@ -1,0 +1,28 @@
+﻿using DataAccessLayer.Concrete;
+using Traveler.CQRS.Queries.DestinationQuery;
+using Traveler.CQRS.Results.DestinationResult;
+
+namespace Traveler.CQRS.Handlers.DestinationHandler
+{
+    public class GetDestinationByIdQueryHandler
+    {
+        private readonly Context _context;
+
+        public GetDestinationByIdQueryHandler(Context context)
+        {
+            _context = context;
+        }
+
+        public GetDestinationByIdQueryResult Handle(GetDestinationByIdQuery query)
+        {
+            var values = _context.Destinations.Find(query.id);
+            return new GetDestinationByIdQueryResult
+            {
+                Destinationid = values.DestinationId,
+                City = values.City,
+                DayNight = values.DayNight,
+                Price = values.Price
+            };
+        } 
+    }
+}
