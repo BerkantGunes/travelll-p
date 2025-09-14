@@ -6,4 +6,4 @@ added new classes
 and
 entities
 with
-C#
+C# Asp.Net Core
