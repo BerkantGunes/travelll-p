@@ -8,3 +8,4 @@ entities
 with
 C# Asp.Net Core
 MVC Pattern
+and MsSQL database
